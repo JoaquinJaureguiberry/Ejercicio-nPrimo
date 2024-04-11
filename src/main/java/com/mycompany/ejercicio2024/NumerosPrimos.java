@@ -56,34 +56,36 @@ public class NumerosPrimos {
     
     public static int[] menorMayor(int[] Arreglo){
         
-        int sum, indice = 0;
         for (int i = 0; i < Arreglo.length; i++) {
-            sum = Arreglo[i];
+            int sum = Arreglo[i];
+            int indice = i;
             for (int j = i+1; j < Arreglo.length; j++) {
-                if (sum < Arreglo[j]) {
+                if (Arreglo[i] > Arreglo[j]) {
                     sum = Arreglo[j];
                     indice = j;
                 }
-                Arreglo[indice] = Arreglo[i];
-                Arreglo[i] = sum;
             }
+            int num = Arreglo[i];
+            Arreglo[i] = sum;
+            Arreglo[indice] = num;
         }
         return Arreglo;
     }
     
     public static int[] mayorMenor(int[] Arreglo){
         
-        int sum, indice = 0;
         for (int i = 0; i < Arreglo.length; i++) {
-            sum = Arreglo[i];
+            int sum = Arreglo[i];
+            int indice = i;
             for (int j = i+1; j < Arreglo.length; j++) {
-                if (sum > Arreglo[j]) {
+                if (Arreglo[i] < Arreglo[j]) {
                     sum = Arreglo[j];
                     indice = j;
-                }
-                Arreglo[indice] = Arreglo[i];
-                Arreglo[i] = sum;
+                }   
             }
+            int num = Arreglo[i];
+            Arreglo[i] = sum;
+            Arreglo[indice] = num;
         }
         return Arreglo;
     }
