@@ -30,7 +30,7 @@ public class Ejercicio2024 {
         
                     for (int i = 0; i < sum + 1; i++) {
                         primo = NumerosPrimos.VerificarPrimo(i);
-                        Arreglo = NumerosPrimos.MostrarNum(Arreglo, primo, i, Arreglo.length);
+                        Arreglo = NumerosPrimos.MostrarNum(Arreglo, primo, i);
                     }
                     break;
                 case 2:
@@ -39,7 +39,7 @@ public class Ejercicio2024 {
                         sum = leer.nextInt();
                         if (sum > 0) {
                             primo = NumerosPrimos.VerificarPrimo(sum);
-                            Arreglo = NumerosPrimos.MostrarNum(Arreglo, primo, sum, Arreglo.length);
+                            Arreglo = NumerosPrimos.MostrarNum(Arreglo, primo, sum);
                         }else{
                             i++;
                         }
