@@ -20,8 +20,9 @@ public class Ejercicio2024 {
                     + "3 - Ver Arreglo.\n"
                     + "4 - Ordenar de menor a mayor.\n"
                     + "5 - Ordenar de mayor a menor.\n"
-                    + "6 - Salir del prg."
-                    + "\n------------------------------\n");
+                    + "6 - Eliminar un número del arreglo.\n"
+                    + "7 - Salir del prg."
+                    + "\n------------------------------");
             opcion = leer.nextInt();
             switch(opcion){
                 case 1:
@@ -51,11 +52,21 @@ public class Ejercicio2024 {
                     break;
                 case 4:
                     Arreglo.menorMayor();
+                    System.out.println("\nLos números primos:");
+                    Arreglo.MostrarArreglo();
                     break;
                 case 5:
                     Arreglo.mayorMenor();
+                    System.out.println("\nLos números primos:");
+                    Arreglo.MostrarArreglo();
                     break;
                 case 6:
+                    System.out.println("Seleccione el número que desee eliminar:");
+                    Arreglo.MostrarArreglo();
+                    sum = leer.nextInt();
+                    Arreglo.EliminarPrimo(sum);
+                    break;
+                case 7:
                     System.out.println("Has salido del prg.");
                     j++;
                     break;
