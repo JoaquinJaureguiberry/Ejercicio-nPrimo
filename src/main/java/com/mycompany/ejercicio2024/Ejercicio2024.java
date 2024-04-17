@@ -9,7 +9,7 @@ public class Ejercicio2024 {
         Scanner leer = new Scanner(System.in);
         
         int sum, opcion;
-        int Arreglo [] = new int [0];
+        NumerosPrimos Arreglo = new NumerosPrimos();
         boolean primo = true;
         
         for (int j = 0; j < 1;) {
@@ -30,7 +30,7 @@ public class Ejercicio2024 {
         
                     for (int i = 0; i < sum + 1; i++) {
                         primo = NumerosPrimos.VerificarPrimo(i);
-                        Arreglo = NumerosPrimos.MostrarNum(Arreglo, primo, i);
+                        Arreglo.MostrarNum(primo, i);
                     }
                     break;
                 case 2:
@@ -39,7 +39,7 @@ public class Ejercicio2024 {
                         sum = leer.nextInt();
                         if (sum > 0) {
                             primo = NumerosPrimos.VerificarPrimo(sum);
-                            Arreglo = NumerosPrimos.MostrarNum(Arreglo, primo, sum);
+                            Arreglo.MostrarNum(primo, sum);
                         }else{
                             i++;
                         }
@@ -47,13 +47,13 @@ public class Ejercicio2024 {
                     break;
                 case 3:
                     System.out.println("\nLos números primos:");
-                    NumerosPrimos.MostrarArreglo(Arreglo);
+                    Arreglo.MostrarArreglo();
                     break;
                 case 4:
-                    Arreglo = NumerosPrimos.menorMayor(Arreglo);
+                    Arreglo.menorMayor();
                     break;
                 case 5:
-                    Arreglo = NumerosPrimos.mayorMenor(Arreglo);
+                    Arreglo.mayorMenor();
                     break;
                 case 6:
                     System.out.println("Has salido del prg.");
