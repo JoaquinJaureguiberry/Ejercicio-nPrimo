@@ -47,11 +47,11 @@ public class NumerosPrimos {
                 return enteros;
             }
         }
-        enteros = RehacerArreglo(num);
+        enteros = AgregarPrimo(num);
         return enteros;
     }
     
-    public int[] RehacerArreglo(int num){
+    public int[] AgregarPrimo(int num){
         
         int [] Arreglob = new int[enteros.length];
         if (enteros.length > 0) {
@@ -68,6 +68,31 @@ public class NumerosPrimos {
             enteros = new int [enteros.length + 1];
             enteros[enteros.length - 1] = num;
         }
+        return enteros;
+    }
+    
+    public int[] EliminarPrimo(int num){
+        
+        for (int i = 0; i < enteros.length; i++) {
+            if (num == enteros[i]) {
+                for (int j = i; j < enteros.length - 1; j++) {
+                    enteros[j] = enteros[j + 1];
+                }
+                int[] Arreglob = new int[enteros.length - 1];
+                for (int j = 0; j < Arreglob.length; j++) {
+                    Arreglob[j] = enteros[j];
+                }
+                enteros = new int[enteros.length - 1];
+                for (int j = 0; j < enteros.length; j++) {
+                    enteros[j] = Arreglob[j];
+                }
+                Arreglob = new int[0];
+                System.out.println("Arreglo modificado:");
+                MostrarArreglo();
+                return enteros;
+            }
+        }
+        System.out.println("Número incorrecto.");
         return enteros;
     }
     
